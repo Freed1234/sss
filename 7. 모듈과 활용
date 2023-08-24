@@ -1,0 +1,379 @@
+# import datetime as dt
+# print(dt.datetime.now())
+
+# today = dt.date.today()
+# print(today)
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# LAB 7-1
+
+# import datetime as dt
+
+# current = dt.datetime.now()
+
+# print('오늘의 날짜: {}년 {}월 {}일'.format(current.year, current.month, current.day))
+# print('현재시간: {}시 {}분 {}초'.format(current.hour, current.minute, current.second))
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import datetime as dt
+
+# gap= dt.datetime(2023, 12, 25) - dt.datetime.now()
+
+# print(type(gap))
+# print('{}일 {}시간'.format(gap.days, gap.seconds//3600))
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# LAB 7-2: 남은 날짜 계산하기
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 100일 후, 100일 전 날짜 구하기
+
+# import datetime as dt
+
+# print('오늘  =', dt.datetime.now())
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# LAB 7-3
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# time 모듈
+
+# import time
+
+# start = time.time()
+
+# sum = 0
+# for i in range(10000000):
+#     sum = sum + i
+
+# print(time.time() - start)
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 랜덤 모듈 random
+
+# import random as rd
+
+# print(rd.random())
+
+# print(rd.random())
+
+# print(rd.randrange(1, 7))
+
+# print(rd.randrange(0, 10, 2))
+
+# print(rd.randint(1, 10))
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# random(): 0에서 1 사이의 실수를 생성한다.(1은 포함하지 않음)
+# randrange(): 지정된 범위 내의 정수를 반환한다.
+# randint(a, b): a <= N <= b 사이의 랜덤 정수 N을 반환한다.
+# shuffle(seq): 주어진 seq리스트의 요소를 랜덤하게 섞는다.
+# choice(seq): seq 시퀀스 내의 임의의 요소를 선택한다.
+# sample(): 지정된 개수의 요소를 임의로 선택한다.
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# LAB 7-5: 랜덤 번호 생성기
+
+# import random
+
+# x = []
+# for _ in range(3):
+#     x.append(random.randrange(0, 100, 5))
+
+# print(x)
+
+
+# import random
+
+# x = list(range(1, 11))
+
+# print(random.sample(x, 3))
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# t.setup(width = 400, height = 400)
+# for i in range(200):
+#     t.forward(i)
+#     t.left(93)
+#     t.speed(9)
+
+# t.done()
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# t.forward(100)
+# t.left(90)
+# t.forward(100)
+
+# t.bye
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# t.forward(n) # 터틀을 거리 n만큼 앞으로 이동한다.
+# t.backward(n) # 터틀을 거리 d만큼 뒤로 이동한다.
+# t.left(n) # 터틀을 각도만큼 왼쪽으로 회전한다.
+# t.right(n) # 터틀을 각도만큼 오른쪽으로 회전한다.
+# t.circle(n) # 현재 위치에서 지정된 반지름 크기의 원을 그린다.
+# t.goto(x, y) # 커서를 특정 위치(좌표)로 보낸다.
+# t.setx(x) # 커서의 x좌표를 지정한 위치로 이동한다.
+# t.sety(y) # 커서의 y좌표를 지정한 위치로 이동한다.
+# t.setheading(n) # 터틀이 바라보는 방향을 초기화한다.
+# t.home() # 터틀의 위치와 방향을 초기화한다.
+# t.speed(n) # 터틀의 속도를 바꾼다. (0: 최고속도, 1: 느린속도, 10: 빠른속도)
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# t.begin_fill() 
+# t.end_fill() # begin_fill()과 end_fill() 사이의 코드에 나타난 부분을 색칠한다.
+# t.color(c) # 터틀의 색깔을 변경한다.
+# t.shape(n) # 터틀의 모양을 변경한다.
+# t.shapesize(n) # 터틀의 크기를 변경한다.
+# t.pos(n) # 터틀의 현재 위치를 구한다.
+# t.towards(x, y) # 현재 터틀이 있는 위치에서 특정 위치까지 바라보는 각도를 구한다.
+# t.xcor() # 터틀의 x 좌표를 구한다.
+# t.ycor() # 터틀의 y 좌표를 구한다.
+# t.heading() # 터틀이 현재 바라보는 각도를 구한다.
+# t.distance(x, y) # 현재 터틀이 있는 위치에서 특정 위치까지의 거리를 구한다.
+# t.penup() # 펜을 올린다
+# t.pendown() # 펜을 내린다.
+# t.pensize() # 팬 굵기를 변경한다.
+# t.isdown() # 펜이 내려져 있는지 여부를 확인하여 부울 값으로 반환한다.
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# t.shapesize(2, 2)
+# t.shape("turtle")
+
+# t.done()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# t.forward(200)
+# t.done()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# t.shape("turtle")
+# t.forward(100) # 터틀의 헤딩 방향으로 100 픽셀 이동
+# t.left(120) # 터틀의 헤딩 방향을 왼쪽으로 120도 회전
+# t.forward(100) # 터틀의 헤딩 방향으로 100픽셀 이동
+# t.left(120) # 터틀의 헤딩 방향을 왼쪽으로 120도 회전
+# t.forward(100) # 터틀의 헤딩 방향으로 100픽셀 이동
+# t.left(120) # 테틀의 헤딩 방향을 왼쪽으로 120도 회전
+
+# t.done()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# for _ in range(3): # 아래의 기능을 세 번 반복
+#     t.forward(100) # 터틀을 헤딩 방향으로 100픽셀 이동
+#     t.left(120) # 터틀의 헤딩 방향을 왼쪽으로 120도 회전
+
+# t.done()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# LAB 7-7: 삼각형과 사각형 그리기
+
+# import turtle as t
+
+
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# for _ in range(4):
+#     t.forward(100)
+#     t.left(90)
+
+# t.done()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# n = 100
+# length = 5
+
+# for i in range(n):
+#     t.left(360/n)
+#     t.forward(length)
+
+# t.done
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+# t.circle(100)
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# t.color('blue') # 파란색을 선택
+# t.begin_fill() # 내부를 채움
+# for _ in range(4):
+#     t.forward(100)
+#     t.left(90)
+# t.end_fill() # 사각형 내부를 파란색으로 채워서 그리기
+
+# t.done()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# t.color('blue')
+# t.begin_fill()
+# for _ in range(4):
+#     t.forward(100)
+#     t.left(90)
+# t.end_fill() # 사각형 내부를 파란색으로 채우기
+
+# t.setheading(90)
+# t.color('red')
+# t.begin_fill()
+# for _ in range(4):
+#     t.forward(100)
+#     t.left(90)
+# t.end_fill() # 사각형 내부를 빨간색으로 채우기
+
+# t.done
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+#미완
+# LAB 7-8: 사각형과 원 그리기
+
+# import turtle as t
+
+# t.color('blue')
+# t.begin_fill()
+# for _ in range(4):
+#     t.forward(100)
+#     t.left(90)
+# t.end_fill() # 사각형 내부를 파란색으로 채우기
+
+# t.setheading(90)
+# t.color('red')
+# t.begin_fill()
+# for _ in range(4):
+#     t.forward(100)
+#     t.left(90)
+# t.end_fill() # 사각형 내부를 빨간색으로 채우기
+
+# t.setheading(90)
+# t.color('yellow')
+# t.begin_fill()
+# for _ in range(4):
+#     t.forward(100)
+#     t.left(90)
+# t.end_fill()
+
+# t.setheading(90)
+# t.color('green')
+# t.begin_fill()
+# for _ in range(4):
+#     t.forward(100)
+#     t.left(90)
+# t.end_fill()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# colors = ['red', 'green', 'blue', 'orange']
+
+# for i in range(200):
+#     t.pencolor(colors[i % 4])
+#     t.forward(i)
+#     t.left(93)
+#     t.bgcolor("black")
+#     t.speed(0)
+
+# t.done()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+
+# t.goto(80, 100) # 1번
+# t.penup() # 2번
+# t.goto(0, 100) # 3번
+# t.pendown() # 4번
+# t.goto(80, 0) # 5번
+
+# t.done()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# import turtle as t
+# import random as rd
+
+# t.shape("circle")
+# d = 300
+# t.penup() # 펜 그리기 기능 비활성화
+# for _ in range(40):
+#     x = rd.randint(-d, d)
+#     y = rd.randint(-d, d)
+#     t.goto(x, y)
+#     t.stamp() # 꼭짓점마다 스탬프를 찍음
+
+# t.done()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# LAB 7-9: 랜덤 그래픽의 응용
+
+# import turtle as t
+# import random as rd
+
+# t.setup(width = 800, height = 800)
+# t.speed(0)
+# t.shape("turtle")
+# t.penup()
+
+# colors = ['red', 'blue', 'yellow', 'orange', 'green']
+# for _ in range(50):
+#     x = rd.randint(-300, 300)
+#     y = rd.randint(-300, 300)
+#     t.goto(x, y)
+#     t.color(rd.choice(colors))
+#     t.setheading(rd.randint(0, 359))
+#     t.stamp()
+
+# t.done()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# tkinter는 쓸 일이 없어서 패스 - 유영중
