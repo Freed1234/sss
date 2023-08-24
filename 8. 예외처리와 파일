@@ -1,0 +1,429 @@
+# try: # 예외가 발생할 우려가 있는 코드를 입력
+#     a, b = input('두 수를 입력하시오: ').split 
+#     result = int(a) / int(b)
+#     print('{}/{} = {}'.format(a, b, result))
+
+# except: # 예외가 발생할 경우 실행되는 코드를 입력
+#     print('수가 정확한지 확인하세요.')
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# try:
+#     b = 2 / 0
+#     a = 1 + 'hundred'
+# except Exception as e:
+#     print('error: ', e)
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# try:
+#     # b = 2 / 0
+#     a = 1 + 'hundred'
+# except Exception as e:
+#     print('error: ', e)
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# LAB 8-3: 예외의 생성과 처리
+
+# a = [1, 2, 3, 4, 5]
+
+# try:
+#     idx = int(input('a의 요소를 하나 선택하시오: '))
+
+# except:
+#     print('오류: 입역 값이 정수나 실수가 아님')
+
+# else:
+#     if idx == 1:
+#         print('{}은(는) 첫 번째 요소입니다.'.format(idx))
+    
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# raise를 이용한 예외의 발생
+
+
+# # 입력값을 확인하고, '예' 혹은 '아니오'가 아닌 경우 ValueError를 발생시키는 함수
+# def get_ans(ans):
+#     if ans in ['예', '아니오']: # 입력값이 '예' 혹은 '아니오'일 경우
+#         print('정상적인 입력입니다')
+#     else: # 그렇지 않은 경우
+#         raise ValueError('입력을 확인하세요')  # 오류 발생
+    
+# # 예외가 발생할 수 있는 코드 블록
+# while True:
+#     try:
+#         ans = input('예/아니오 중 하나를 입력하세요: ')  # 사용자로부터 입력받음
+#         get_ans(ans)  # 입력값 확인
+#         break  # 정상적인 입력이면 while 문 종료
+#     except Exception as e: # Exception 형태의 오류 발생 시
+#         print('error: ', e) # 오류 메시지 출력
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 파일 열기와 쓰기, 파일 닫기의 표현
+
+
+# f = open('hello.txt', 'w') # 파일을 연다
+# f.write('Hello World!') # hello.txt 파일에 문자를 쓴다.
+# f.close() # 파일을 닫는다.
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 파일 오픈을 위한 여러가지 모드와 의미
+
+
+# # read의 약자로 파일을 '읽기 전용 모드'로 연다. 이 모드는 파일 열기의 기본 모드이다.
+# f = open('hello.txt', 'r')
+
+# # write의 약자로 파일을 쓰기 전용 모드로 연다.
+# f = open('hello.txt', 'w')
+
+# # Append의 약자로 파일을 쓰기 모드로 열어서 기존 파일의 뒤에 새로 작성된 내용을 추가한다.
+# f = open('hello.txt', 'a')
+
+# # 이 모드는 쓰기 전용으로 파일을 여는데, 파일을 새로 만들기 위해서 사용한다.
+# f = open('hello.txt', 'x')
+
+# # + 기호는 읽기 쓰기 모드로 'r+'나 'r+t'와 같은 조합으로 사용할 수 있다. 'r+'와 같이 표기하면 읽기 모드로 열어서 쓰기까지 가능하다. 반면 'w+'와 같이 표기하면 쓰기모드로 열어서 읽기까지 가능하다.
+# f = open('hello.txt', '+')
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 파일 모드의 종류
+
+
+# # Text의 약자로 파일을 쓰기 모드로 열어서 기존 파일의 뒤에 새로 작성된 내용을 추가한다.
+# f = open('hello.txt', 't')
+
+# # Binary의 약자로 이진 파일형식으로 파일을 열거나 생성한다.
+# f = open('hello.txt', 'b')
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# LAB 8-4: 파일 저장하기
+
+
+# f = open('numbers', 'w')
+# f.write('100, 200, 300, 400')
+# print(f)
+# print(f)
+
+
+# f = open('lyrics.txt', 'r')
+
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+
+# f.close()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 파일 열기와 읽기, 파일 닫기의 표현
+
+
+# f = open('hello.txt', 'r') # 파일을 연다.
+
+# s = f.read() # hello.txt 파일을 읽는다.
+# print(s) # 파일의 내용을 출력한다.
+
+# f.close() # 파일을 닫는다.
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# read() 메소드를 이용하여 지정된 문자 크기만큼 읽기
+
+
+# f = open('hello.txt', 'r') # 파일을 연다.
+
+# s = f.read(5) # hello.txt 파일의 다섯 문자를 읽는다.
+# print(s) # 파일의 내용을 출력한다.
+
+# f.close() # 파일을 닫는다.
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# readline() 메소드를 이용한 줄 단위 읽기와 출력하기
+
+
+# f = open('foo.txt', 'r') # 파일을 연다.
+
+# s = f.readline() # 파일의 첫 번째 줄 'AAA'를 읽어온다.
+# print(s, end = "") # 이 줄을 출력한다.
+# s = f.readline() # 파일의 두 번째 줄 'BBB'를 읽어온다.
+# print(s, end = "") # 이 줄을 출력한다.
+
+# f.close() # 파일을 닫는다.
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# readline() 메소드와 rstrip()을 이용한 줄 단위 읽기와 출력
+
+
+# f = open('foo.txt', 'r') # 'foo.txt' 파일을 연다.
+
+# s = f.readline().rstrip() # 'AAA' 줄을 읽고 오른쪽에 있는 모든 공백문자를 가져옴
+# print(s) # 이 줄을 출력한다.
+# s = f.readline().rstrip() # 'BBB' 줄을 읽고 오른쪽에 있는 모든 공백문자를 가져옴
+# print(s) # 이 줄을 출력한다.
+
+# f.close() # 파일을 닫는다.
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# LAB 8-5: 파일 읽어오기
+
+
+# f = open('numbers.txt', 'r')
+
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+
+# f.close()
+
+
+# f = open('lyrics.txt', 'r')
+
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+# s = f.readline().rstrip()
+# print(s)
+
+# f.close()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 파일 추가(append) 모드를 이용한 파일 열기와 추가하기
+
+
+# f = open('foo.txt', 'a+') # 파일 추가 모드로 열기
+# f.write('This will be appended.\n') 
+# f.write('This too.\n')
+# f.close()
+
+# 파일 추가 후
+
+# AAA
+# BBB
+# CCC
+# This will be appended.
+# This too.
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 사용자로부터 입력받은 다섯 개의 정수를 저장하는 프로그램
+
+
+# f = open('data5.txt', 'w') # 파일을 쓰기 모드로 열기
+# for _ in range(5):
+#     n = input('정수를 입력하시오: ')
+#     f.write(n) # 파일에 입력된 정수를 문자열로 쓰기
+#     f.write('\n')
+# f.close()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 파일로부터 정수를 입력받아 합과 평균을 계산
+
+
+# f = open('data5.txt', 'r')
+# su = 0
+# for _ in range(5):
+#     n = int(f.readline()) # data5.txt 파일의 한 줄 내의 숫자를 읽고
+#     su += n # su에 누적해서 더한다.
+
+# print('다섯 숫자의 합 = {}, 평균 = {}'.format(su, su/5)) # 합과 평균을 출력
+# f.close()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 사용자로부터 입력받은 파일을 번호를 붙여서 출력하기
+
+
+# fname = input('입력할 파일의 이름: ')
+# f = open(fname, 'r', encoding = 'UTF8') # UTF8 인코딩을 통해 파일 열기 (한글인식용)
+# n = 1
+# l = f.readline()
+# while l:
+#     print('{:3d}: {}'.format(n, l), end = "")
+#     n += 1
+#     l = f.readline()
+
+# f.close()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# try-except 문을 사용한 파일 입출력
+
+
+# import sys
+
+# fname = input('입력할 파일의 이름: ')
+# try:
+#     f = open(fname, 'r', encoding = 'UTF8') # 파일 열기
+
+# except IOError:
+#     print('Could not read file: ', fname)
+#     sys.exit()
+# except:
+#     print('Unexpected error: ', sys.exc_info()[0])
+#     sys.exit()
+
+# n = 1 # n을 1로 초기화함
+# l = f.readline() # 변수 l은 읽어들인 한 줄의 문자열을 저장함
+# while l :
+#     print('{:3d}: {}'.format(n, l), end = '')
+#     n += 1 # 한 줄을 출력한 후 줄 수를 증가시킨다.
+#     l = f.readline() # 다음 줄을 읽어온다.
+# f.close()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# LAB 8-6: 파일 저장하기
+
+
+
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# (with 문법) 파일 열기와 쓰기, 파일 닫기의 표현
+
+
+# with open('hello.txt', 'w') as f: # 파일 열기와 닫기를 자동 수행함
+#     f.write('Hello World!') # hello.txt 파일에 쓰기
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# try-except 문을 사용한 파일 입출력 # 8-24
+
+
+
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# with 문을 사용한 웹 접속
+
+
+
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 연습문제
+
+
+# import random
+
+# fout = open('sort.in', 'w')
+
+# N = random.randint(10, 100)
+# fout.write('{}\n'.format(N))
+
+# for _ in range(N):
+#     x = random.randint(1, 100)
+#     y = random.randint(1, 100)
+#     fout.write('{:3d} {:3d}\n'.format(x, y))
+
+# fout.close()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 연습문제
+
+
+# fin = open('sort.in', 'r')
+# fout = open('sort.out', 'w')
+
+# N = int(fin.readline().rstrip())
+# coord = []
+# for _ in range(N):
+#     x, y = fin.readline().rstrip().split()
+#     coord.append([int(x), int(y)])
+
+# coord.sort()
+
+# for xy in coord:
+#     fout.write('{:3d} {3d}\n'.format(xy[0], xy[1]))
+
+# fin.close()
+# fout.close()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 연습문제
+
+
+# import random
+
+# fout = open('count.in', 'w')
+
+# N = random.randint(100, 1000)
+# for _ in range(N):
+#     num = random.randint(1, 100)
+#     fout.write('{:3d} '.format(num))
+
+# fout.close()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 연습문제
+
+
+# fin = open('count.in', 'r')
+# fout = open('count.opt', 'w')
+
+# nums = fin.readline().rstrip().split()
+# for idx, value in enumerate(nums):
+#     nums[idx] = int(nums[idx])
+
+# fin.close()
+# fout.close()
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+# 연습문제
+
+
+# fin = open('count.in', 'r')
+# fout = open('count.opt', 'w')
+
+# nums = fin.readline().rstrip().split()
+# for idx, value in enumerate(nums):
+#     nums[idx] = int(nums[idx])
+
+# count = [0]*100
+# for value in nums:
+#     count[value-1] += 1
+
+# for idx, value in enumerate(count):
+#     fout.write('{:3d}: {:4d}\n'.format(idx+1, value))
+
+# fin.close()
+# fout.close()
